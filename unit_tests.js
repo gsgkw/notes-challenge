@@ -1,6 +1,6 @@
 var Note = require('./note-model.js');
-var NoteList = require('./node-list-model.js');
-
+var NoteList = require('./note-list-model.js');
+var NoteListView = require('./note-list-view.js');
 
 (function(){
   var note = new Note('this is a test');
@@ -17,5 +17,16 @@ var NoteList = require('./node-list-model.js');
   var noteList = new NoteList;
     noteList.addNote('First note');
   if (noteList.notes[0].read() !== 'First note')
-  	throw new Error('You are shit')
+  	throw new Error('Does not read note from array')
+})();
+
+
+(function(){
+  var noteList = new NoteList;
+    noteList.addNote('First note');
+    // console.log(noteList.notes[0].read())
+    if (new NoteListView(noteList) !== 'First note')
+    throw new Error('Does not read note from array')
+  // if (new NoteListView(noteList) !== '<ul><li>First note</li></ul>')
+  // 	throw new Error('Does not print notes into HTML')
 })();
