@@ -24,9 +24,7 @@ var NoteListView = require('./note-list-view.js');
 (function(){
   var noteList = new NoteList;
     noteList.addNote('First note');
-    // console.log(noteList.notes[0].read())
-    if (new NoteListView(noteList) !== 'First note')
-    throw new Error('Does not read note from array')
-  // if (new NoteListView(noteList) !== '<ul><li>First note</li></ul>')
-  // 	throw new Error('Does not print notes into HTML')
+    var noteListView = new NoteListView(noteList)
+  if (noteListView.getlist() !== '<ul><li>First note</li></ul>')
+  	throw new Error('Does not print notes into HTML')
 })();

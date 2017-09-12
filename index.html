@@ -1,32 +1,17 @@
-var Note = require('./note-model.js');
-var NoteList = require('./note-list-model.js');
-var NoteListView = require('./note-list-view.js');
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notes homepage</title>
+    <script src= "./note-controller.js"></script>
 
-(function(){
-  var note = new Note('this is a test');
-    if (note.text !== 'this is a test') {
-      throw new Error('does not instantiate with text')
-    };
-    if (note.read() !== 'this is a test') {
-      throw new Error('does not return stored text')
-    };
+  </head>
+  <body>
 
-})();
+    <div id=app>
+      hello
+    </div>
+    <script> changeText()</script>
 
-(function(){
-  var noteList = new NoteList;
-    noteList.addNote('First note');
-  if (noteList.notes[0].read() !== 'First note')
-  	throw new Error('Does not read note from array')
-})();
-
-
-(function(){
-  var noteList = new NoteList;
-    noteList.addNote('First note');
-    // console.log(noteList.notes[0].read())
-    if (new NoteListView(noteList) !== 'First note')
-    throw new Error('Does not read note from array')
-  // if (new NoteListView(noteList) !== '<ul><li>First note</li></ul>')
-  // 	throw new Error('Does not print notes into HTML')
-})();
+  </body>
+</html>
