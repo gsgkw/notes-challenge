@@ -1,5 +1,4 @@
-var Note = require('./note-model.js');
-var NoteList = require('./note-list-model.js');
+
 
 
 // function NoteListView(noteList) {
