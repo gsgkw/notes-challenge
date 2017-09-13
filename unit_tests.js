@@ -1,6 +1,6 @@
-var Note = require('./note-model.js');
-var NoteList = require('./note-list-model.js');
-var NoteListView = require('./note-list-view.js');
+// var Note = require('./note-model.js').Note;
+// var NoteList = require('./note-list-model.js').NoteList;
+// var NoteListView = require('./note-list-view.js');
 
 (function(){
   var note = new Note('this is a test');
@@ -20,9 +20,20 @@ var NoteListView = require('./note-list-view.js');
   	throw new Error('Does not read note from array')
 })();
 
+(function(){
+  function ListDouble() {};
+    ListDouble.prototype = {
+      addNote: function() {}
+    };
+
+  var listDouble = new ListDouble
+  var noteController = new NoteController(listDouble)
+
+})();
+
 
 (function(){
-  var noteList = new NoteList;
+  var noteList = new NoteList(Note);
     noteList.addNote('First note');
     var noteListView = new NoteListView(noteList)
   if (noteListView.getlist() !== '<ul><li>First note</li></ul>')

@@ -1,13 +1,5 @@
 
-
-
-// function NoteListView(noteList) {
-//       for (i = 0; i < noteList.notes.length; i++){
-//    noteList.notes[i].read()
-//   }
-// };
-
-
+(function(exports){
 function NoteListView(listObject) {
   var listObject = listObject;
   this.getlist = function() {
@@ -18,4 +10,5 @@ function NoteListView(listObject) {
 
   };
 
-module.exports = NoteListView
+exports.NoteListView = NoteListView
+})(this)

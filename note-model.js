@@ -1,10 +1,12 @@
-function Note(text) {
-  this.text = text
-}
 
-  Note.prototype.read = function() {
-    return this.text
-  }
+(function(exports){
 
+  function Note(text) {
+    this.text = text;
+    this.read = function() {
+      return this.text
+    };
+  };
 
-module.exports = Note
+  exports.Note = Note;
+})(this)
