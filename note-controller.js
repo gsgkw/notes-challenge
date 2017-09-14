@@ -5,8 +5,6 @@ function NoteController(listmodel){
   noteListView = new NoteListView(listmodel);
 };
 
-NoteController.prototype.displayNotes = function(){
-  var myElement = document.getElementById("app");
-
-  myElement.innerHTML = noteListView.getlist()
+NoteController.prototype.displayNotes = function(doc = document){
+doc.getElementById("app").innerHTML = noteListView.getlist()
 };
